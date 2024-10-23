@@ -3,13 +3,13 @@
 
 def czy_pierwsza(a):
     n = 1
-    dzielniki = []
+    dzielniki = 0
     while n <= a**(1/2):
         if a % n == 0:
-            dzielniki.append(n)
+            dzielniki += n
         n+=1
     
-    return True if len(dzielniki) == 1 else False
+    return True if dzielniki == 1 else False
 
 def main():
     try: 
