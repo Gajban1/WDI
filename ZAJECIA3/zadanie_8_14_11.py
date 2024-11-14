@@ -35,7 +35,8 @@ try:
     n = int(input("Podaj wymar tabliy nxn: "))
 
     tablica = [[randint(1,100000) for _ in range(n)] for _ in range(n)]
-    #tablica = [[3337,12341],[3577,134141]] Przyklad
+    #tablica = [[3337,12341],[3577,134141]] Przyklad Poprawny
+    #tablica = [[111,111],[22357,3234117654]] Przyklad nie poprawny
 
     for i in tablica:
         if sprawdz_pierwsze(i):
