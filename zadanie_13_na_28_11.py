@@ -18,18 +18,18 @@ print(data.describe())  # Statystyki opisowe dla kolumn numerycznych
 
 numeric_columns = data.select_dtypes(include='number')
 
-mean_values = numeric_columns.mean()
+srednia_wartosc = numeric_columns.mean()
 median_values = numeric_columns.median()
 
 print("\nŚrednie wartości dla kolumn numerycznych:")
-print(mean_values)
+print(srednia_wartosc)
 
 print("\nMedianowe wartości dla kolumn numerycznych:")
 print(median_values)
 
-threshold = float(input("\nPodaj wartość progu dla petallength (≥): "))
+prog = float(input("\nPodaj wartość progu dla petallength (≥): "))
 
-filtered_data = data[data['petallength'] >= threshold]
+filtered_data = data[data['petallength'] >= prog]
 
 print("\nPodgląd przefiltrowanych danych (pierwsze 5 wierszy):")
 print(filtered_data.head())
