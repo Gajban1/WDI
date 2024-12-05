@@ -33,7 +33,7 @@ def czy_rownolegle(p1, p2, p3, p4):
     
     m1 = wspolczynnik_kierunkowy(p1, p2)
     m2 = wspolczynnik_kierunkowy(p3, p4)
-    return True if int(m1 - m2) == 0 or (m1 == "pionowa" and m2 == "pionowa") else False
+    return True if int(m1 - m2) == 0 else False
 
 def trapez_istnieje(dane):
     """Sprawdza, czy można utworzyć trapez i zwraca wierzchołki trapezu."""
@@ -112,6 +112,23 @@ def test_trapez_istnieje():
 
     dane8 = [(1,1), (1,2), (2,1), (3,0), (3,3), (2,2)]
 
+    # Losowo wygenerowane punkty
+    dane9 = [
+    (2, 2), (6, 2), (3, 5), (5, 5),  # Punkty trapezu
+    (0, 0), (7, 1), (8, 6), (4, 7), (1, 8), (6, 9), (9, 3), (3, 10), (10, 0), (0, 9)
+    ]
+    dane10 = [
+    (2, 2), (8, 2), (4, 6), (6, 6),  # Punkty trapezu
+    (3, 4), (5, 5), (7, 4), (5, 3), (4, 5),  # Punkty wewnątrz trapezu
+    (0, 0), (9, 7), (10, 1), (1, 9), (8, 10)  # Punkty na zewnątrz trapezu
+    ]
+
+
+
+    
+    
+
+
     assert trapez_istnieje(dane1) == True, "Test 1  powiódł się"
     assert trapez_istnieje(dane2) == True, "Test 2  powiódł się"
     assert trapez_istnieje(dane3) == False, "Test 3 nie powiódł się"
@@ -120,6 +137,8 @@ def test_trapez_istnieje():
     assert trapez_istnieje(dane6) == True, "Test 6  powiódł się"
     assert trapez_istnieje(dane7) == False, "Test 7 nie powiódł się"
     assert trapez_istnieje(dane8) == True, "Test 8  powiódł się"
+    assert trapez_istnieje(dane9) == True, "Test 9  powiódł się"
+    assert trapez_istnieje(dane10) == False, "Test 10 nie powiódł się"
 
     print("Wszystkie testy przeszły pomyślnie!")
 
@@ -131,7 +150,9 @@ def test_trapez_istnieje():
     #wizualizuj_punkty(dane5, "TEST 5")
     #wizualizuj_punkty(dane6, "TEST 6" )
     #wizualizuj_punkty(dane7, "TEST 7")
-    wizualizuj_punkty(dane8 , "TEST 8")
+    #wizualizuj_punkty(dane8 , "TEST 8")
+    #wizualizuj_punkty(dane9, "TEST 9")
+    #wizualizuj_punkty(dane10, "TEST 10")
 
 # Uruchomienie testów
 test_trapez_istnieje()
