@@ -1,3 +1,11 @@
+"""
+Napisz program, który rekurencyjnie i 
+iteracyjnie szuka w napisie (w zależności od tego, czego chce użytkownik):
+spółgłosek, samogłosek, cyfr i znaków specjalnych. 
+Na końcu zwróć ich ilość oraz czas potrzebny do wyznaczenia. 
+Wygeneruj losowe napisy o długości zadanej przez użytkownika.
+"""
+
 import random
 import string
 import time
